@@ -43,15 +43,15 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "/static/lufei.ico"
-    favicon16x16: "/static/lufei.ico"
-    favicon32x32: "/static/lufei.ico"
-    apple_touch_icon: "/static/lufei.png"
-    safari_pinned_tab: "/static/lufei.png"
+    favicon: "lufei.ico"
+    favicon16x16: "lufei.ico"
+    favicon32x32: "lufei.ico"
+    apple_touch_icon: "lufei.png"
+    safari_pinned_tab: "lufei.png"
 
   label:
     text: "Elvin' Blog"
-    icon: /static/lufei.ico
+    icon: /lufei.ico
     iconHeight: 35
 
   # profile-mode
