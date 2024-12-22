@@ -9,21 +9,16 @@ jobs:
     - name: 读取仓库内容
       uses: actions/checkout@v4
 
-    - name: 检测go版本, 安装hugo
+    - name: 构建 web
       run: |
         go version
         go install github.com/gohugoio/hugo@latest
         export PATH=$PATH:/home/runner/go/bin
         hugo version
-        pwd
-        ls
-
-    - name: 构建 web
-      run: |
         hugo
         ls public
     
-    - name: 部署
+    - name: 部署 web
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: web
