@@ -12,3 +12,9 @@ jobs:
     - name: 检测go版本
       run: |
         go version
+        go env
+
+    - name: 安装hugo
+      run: |
+        go install github.com/gohugoio/hugo@latest
+        hugo version
