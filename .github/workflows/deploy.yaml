@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  hugo-build:
+    name: hugo build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 读取仓库内容
+      uses: actions/checkout@v4
+
+    - name: 检测go版本
+      run: |
+        go version
