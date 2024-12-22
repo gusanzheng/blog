@@ -17,4 +17,6 @@ jobs:
     - name: 安装hugo
       run: |
         go install github.com/gohugoio/hugo@latest
+        export PATH=$PATH:/home/runner/go/bin
         hugo version
+        pwd
