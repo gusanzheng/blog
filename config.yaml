@@ -76,6 +76,10 @@ params:
     theme: "preferred_color_scheme"
     lang: "en"
     crossorigin: "anonymous"
+  
+  # https://blog.csdn.net/m0_51993913/article/details/132261540
+  busuanzi:
+    enable: true
 
 menu:
   main:
