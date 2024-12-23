@@ -4,17 +4,19 @@ title: Elvin's Blog
 pagination.pagierSize: 5
 theme: PaperMod
 
-enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-enableEmoji: true # 允许 emoji
+enableEmoji: true
+enableRobotsTXT: true
+enableInlineShortcodes: true
 
 minify:
   disableXML: true
   minifyOutput: true
 
 params:
+  DateFormat: "2006/01/02"
   defaultTheme: auto
   ShowToc: true
   TocOpen: true
@@ -24,22 +26,26 @@ params:
   ShowCodeCopyButtons: true
   ShowPostNavLinks: true
   comments: true
+  VisitCount: true
+  ShowLastMod: true #显示文章更新时间
 
   assets:
-    favicon: "lufei.png"
-    favicon16x16: "lufei.png"
-    favicon32x32: "lufei.png"
-    apple_touch_icon: "lufei.png"
-    safari_pinned_tab: "lufei.png"
+    favicon: "panda.png"
+    favicon16x16: "panda.png"
+    favicon32x32: "panda.png"
+    apple_touch_icon: "panda.png"
+    safari_pinned_tab: "panda.png"
 
   label:
-    text: "Elvin' Blog"
-    icon: /lufei.png
-    iconHeight: 35
+    text: "🐼 Elvin' Blog"
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"
     Content: Welcome to Elvin's Blog
+
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/gusanzheng"
 
   # for search
   # https://fusejs.io/api/options.html
@@ -73,18 +79,26 @@ params:
 
 menu:
   main:
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    - identifier: home
+      name: 🏠 Home
+      url: /
       weight: 10
-    - identifier: search
-      name: Search
-      url: /search/
+    - identifier: posts
+      name: 📚️ Posts
+      url: posts
       weight: 20
-    - identifier: github
-      name: GitHub
-      url: https://github.com/gusanzheng
+    - identifier: archives
+      name: 🕙️ Archives
+      url: archives
       weight: 30
+    - identifier: tags
+      name: 🧩 Tags
+      url: /tags/
+      weight: 40
+    - identifier: search
+      name: 🔍 Search
+      url: /search/
+      weight: 50
 
 markup:
   highlight:
@@ -94,6 +108,7 @@ markup:
     codeFences: true # 代码围栏
     lineNos: true # 代码行
     lineNumbersInTable: false
+    style: darcula
 
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
 outputs:
