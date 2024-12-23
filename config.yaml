@@ -1,0 +1,103 @@
+baseURL: https://gusanzheng.github.io/
+languageCode: en-us
+title: Elvin's Blog
+pagination.pagierSize: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true # 允许 emoji
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  defaultTheme: auto
+  ShowToc: true
+  TocOpen: true
+  ShowWordCount: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  comments: true
+
+  assets:
+    favicon: "lufei.png"
+    favicon16x16: "lufei.png"
+    favicon32x32: "lufei.png"
+    apple_touch_icon: "lufei.png"
+    safari_pinned_tab: "lufei.png"
+
+  label:
+    text: "Elvin' Blog"
+    icon: /lufei.png
+    iconHeight: 35
+
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to Elvin's Blog
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+    includeMatches: true
+  
+  # for comment
+  # https://giscus.app/zh-CN
+  giscus:
+    repo: "https://github.com/gusanzheng/blog"
+    repoId: "xxxxxx"
+    category: "Announcements"
+    categoryId: "xxxxx"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    lightTheme: "light"
+    darkTheme: "dark"
+    lang: "zh-CN"
+    crossorigin: "anonymous"
+
+menu:
+  main:
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 10
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
+    - identifier: github
+      name: GitHub
+      url: https://github.com/gusanzheng
+      weight: 30
+
+markup:
+  highlight:
+    noClasses: false
+    guessSyntax: true
+    anchorLineNos: false # 不要给行号设置锚标
+    codeFences: true # 代码围栏
+    lineNos: true # 代码行
+    lineNumbersInTable: false
+
+# https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
+outputs:
+  home:
+    - HTML # 生成的静态页面
+    - RSS # 这个其实无所谓
+    - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
