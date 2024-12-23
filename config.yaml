@@ -55,20 +55,20 @@ params:
     includeMatches: true
   
   # for comment
-  # https://giscus.app/zh-CN
+  # https://giscus.app/
+  # https://www.lixueduan.com/posts/blog/02-add-giscus-comment/
   giscus:
-    repo: "https://github.com/gusanzheng/blog"
-    repoId: "xxxxxx"
+    repo: "gusanzheng/blog"
+    repoId: "R_kgDONg89Hg"
     category: "Announcements"
-    categoryId: "xxxxx"
+    categoryId: "DIC_kwDONg89Hs4CleBn"
     mapping: "pathname"
     strict: "0"
     reactionsEnabled: "1"
     emitMetadata: "0"
     inputPosition: "bottom"
-    lightTheme: "light"
-    darkTheme: "dark"
-    lang: "zh-CN"
+    theme: "preferred_color_scheme"
+    lang: "en"
     crossorigin: "anonymous"
 
 menu:
