@@ -77,9 +77,10 @@ params:
     lang: "en"
     crossorigin: "anonymous"
   
-  # https://blog.csdn.net/m0_51993913/article/details/132261540
+  # https://blog.kanikig.xyz/hugo-busuanzi/
   busuanzi:
     enable: true
+
 
 menu:
   main:
