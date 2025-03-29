@@ -10,7 +10,7 @@ description: ""
 license: ""
 images: []
 
-tags: ["tutorial","hugo", "github page"]
+tags: ["hugo", "github page"]
 categories: ["tutorial"]
 
 featuredImage: ""
