@@ -62,7 +62,7 @@ seo:
 **摘要**
 使用Hugo，在Github Page上部署个人网站。
 
-**关键字**
+**关键词**
 `hugo`, `LoveIt`, `github page`, 个人网站
 
 <!--more-->

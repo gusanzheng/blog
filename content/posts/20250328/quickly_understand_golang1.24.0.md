@@ -63,7 +63,7 @@ seo:
 **摘要**
 2025/02/11, golang更新至1.24.0版本。
 
-**关键字**
+**关键词**
 `go1.24.0`, `Swiss Table`, `weak pointer`, `omitzero`, `generic type aliases`
 
 <!--more-->
