@@ -3,6 +3,7 @@ baseURL = "https://gusanzheng.github.io/blog/"
 # theme
 # 主题
 theme = "LoveIt"
+
 # themes directory
 # 主题目录
 themesDir = "themes/"
