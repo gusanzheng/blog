@@ -1,6 +1,6 @@
 ---
-title: "Vim Simple Usage"
-subtitle: "Vim 简单用法"
+title: "Vim"
+subtitle: ""
 date: 2025-03-29T11:45:05+08:00
 lastmod: 2025-03-29T11:45:05+08:00
 draft: false
@@ -61,7 +61,7 @@ seo:
 ---
 
 **摘要**
-使用`vim`的小技巧。
+简单使用`vim`。
 
 **关键词**
 `vim`

@@ -1,6 +1,6 @@
 ---
-title: "WSL Simple Usage"
-subtitle: "WSL 简单使用"
+title: "WSL"
+subtitle: ""
 date: 2025-03-29T11:53:11+08:00
 lastmod: 2025-03-29T11:53:11+08:00
 draft: false
@@ -61,7 +61,7 @@ seo:
 ---
 
 **摘要**
-使用`wsl`的小技巧。
+简单使用`wsl`。
 
 **关键词**
 `wsl`

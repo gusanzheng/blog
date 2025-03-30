@@ -1,6 +1,6 @@
 ---
-title: "Obsidian Simple Usage"
-subtitle: "Obsidian 简单用法"
+title: "Obsidian"
+subtitle: ""
 date: 2025-03-29T11:31:32+08:00
 lastmod: 2025-03-29T11:31:32+08:00
 draft: false
@@ -60,7 +60,7 @@ seo:
   # ...
 ---
 **摘要**
-使用obsidian做笔记的小技巧。
+简单使用obsidian做笔记。
 
 **关键词**
 `obsidian`
