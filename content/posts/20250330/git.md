@@ -275,6 +275,13 @@ git pull --rebase origin master
 git fetch origin master
 git rebase master
 ```
+### Git cherry-pick
+
+将某个特定的提交（commit）从一个分支应用到当前分支上
+```bash
+git cherry-pick <commit-hash>
+```
+
 ### 3. Git lfs
 ```bash
 apt install git-lfs
