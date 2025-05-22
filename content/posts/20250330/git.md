@@ -71,6 +71,7 @@ seo:
 - Git LFS：通过将大文件存储在远程服务器上，并在 Git 仓库中仅保存指向这些文件的指针，从而减少仓库的大小和历史记录的负担。
 
 ## 1. Git 基础
+
 ```bash
 # 克隆仓库
 git clone <link>
@@ -101,6 +102,7 @@ git diff origin/dev -- src ":(exclude)src/vendor" ":(exclude)src/codec"
 
 
 ## 分支
+
 ```bash
 # 查看本地分支
 git branch
@@ -142,6 +144,7 @@ git branch -m main
 git checkout --orphan new-branch
 ```
 ## 标签
+
 ```bash
 # 创建标签并附带注释
 git tag -s v1.0 -m "Release version 1.0"
@@ -156,6 +159,7 @@ git ls-remote --tags origin
 git checkout -b v1.0.0 tags/v1.0.0
 ```
 ## 设置仓库
+
 ```bash
 # 无论何时初始化一个新的仓库，默认分支的名称都应该是 master
 git config --global init.defaultBranch master
@@ -195,12 +199,14 @@ log
 ```
 ## 2. Git 进阶
 ### Git restore 回滚文件
+
 ```bash
 # 撤销对工作目录中的修改，不影响暂存区
 git restore test.txt
 ```
 
 ### Git reset 回滚操作
+
 ```bash
 # 保留工作区和缓存区，仅撤销 git commit， 文件的状态从“已提交”变为“已暂存”
 git reset --soft HEAD~1
@@ -216,7 +222,9 @@ HEAD~1：表示当前分支的倒数第2次提交。
 HEAD~2：表示当前分支的倒数第3次提交。
 HEAD~3：表示当前分支的倒数第4次提交。
 ```
-### Git stash 临时保存修改，以便切换分支
+### Git stash 
+
+临时保存修改，以便切换分支
 ```bash
 用于临时保存当前工作目录的更改，以便你可以切换到其他分支或进行其他操作，而不会丢失未提交的更改
 # 将所有未提交的更改保存到一个栈中，并将工作目录恢复到最近一次提交的状态
@@ -242,6 +250,8 @@ git stash clear # 清空
 git stash show stash@{0}
 ```
 ### Git merge 合并
+
+将变更合并进来，生成新的提交
 ```bash
 # 处在 master 分支，把dev分支的内容合并进来
 git merge dev
@@ -254,6 +264,8 @@ git commit -am "merged dev"
 git merge --abort
 ```
 ### Git rebase 变基 
+
+将变更内容重放
 ```bash
 # 交互
 git rebase -i [commitid]
@@ -282,7 +294,9 @@ git rebase master
 git cherry-pick <commit-hash>
 ```
 
-### 3. Git lfs
+## 3. Git lfs
+
+大文件操作
 ```bash
 apt install git-lfs
 
