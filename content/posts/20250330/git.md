@@ -27,37 +27,7 @@ linkToMarkdown: true
 rssFullText: false
 
 toc:
-  enable: true
-  auto: true
-  keepStatic: false
-code:
-  copy: true
-  maxShownLines: 50
-math:
-  enable: false
-  # ...
-mapbox:
-  # ...
-share:
-  enable: true
-  # ...
-comment:
-  enable: true
-  # ...
-library:
-  css:
-    # someCSS = "some.css"
-    # located in "assets/"
-    # Or
-    # someCSS = "https://cdn.example.com/some.css"
-  js:
-    # someJS = "some.js"
-    # located in "assets/"
-    # Or
-    # someJS = "https://cdn.example.com/some.js"
-seo:
-  images: []
-  # ...
+  auto: false
 ---
 **摘要**
 简单使用`git`。
