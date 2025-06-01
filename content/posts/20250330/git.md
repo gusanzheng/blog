@@ -7,24 +7,12 @@ draft: false
 author: "Steven"
 authorLink: "https://github.com/gusanzheng"
 description: ""
-license: ""
 images: []
 
 tags: ["git"]
 categories: ["tutorial"]
 
-featuredImage: ""
-featuredImagePreview: ""
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-twemoji: false
 lightgallery: true
-ruby: true
-fraction: true
-fontawesome: true
-linkToMarkdown: true
-rssFullText: false
 
 toc:
   auto: false
