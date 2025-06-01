@@ -70,8 +70,51 @@ seo:
 - Git：适合管理文本文件和小型二进制文件，但对于大文件（如图片、视频、数据集等），Git 的效率较低，因为每次更改都会存储整个文件的副本。
 - Git LFS：通过将大文件存储在远程服务器上，并在 Git 仓库中仅保存指向这些文件的指针，从而减少仓库的大小和历史记录的负担。
 
-## 1. Git 基础
+## Git 基础
 
+### 起步
+基础设置
+```bash
+# 无论何时初始化一个新的仓库，默认分支的名称都应该是 master
+git config --global init.defaultBranch master
+
+# 查看配置
+git config --list
+
+# 设置用户名和邮箱
+git config --global user.name <user_name>
+git config --global user.email <user_email>
+
+# 取消配置
+git config --global --unset xx
+
+# 初始化仓库，并设置初始化分支为master
+git init --initial-branch=master。
+
+# 添加远程仓库地址
+git remote add origin <link>
+
+# 显示当前远程仓库链接
+git remote -v
+
+# 更改远程仓库地址，比如更改为 git@xxx
+git remote set-url origin <link>
+```
+### `.gitignore`
+配置忽略项目
+
+```text
+.vscode
+
+# 忽略工作目录下的pkg目录
+/pkg
+
+# 慎用！忽略所有目录下的log目录
+log
+```
+
+### git 基础操作
+基础操作
 ```bash
 # 克隆仓库
 git clone <link>
@@ -101,8 +144,8 @@ git diff origin/dev -- src ":(exclude)src/vendor" ":(exclude)src/codec"
 ```
 
 
-## 分支
-
+### git branch
+分治操作
 ```bash
 # 查看本地分支
 git branch
@@ -143,8 +186,8 @@ git branch -m main
 # 另一个是使新分支没有父结点，即没有历史记录，是一个完全独立背景干净的分支
 git checkout --orphan new-branch
 ```
-## 标签
-
+### git tag
+标签操作
 ```bash
 # 创建标签并附带注释
 git tag -s v1.0 -m "Release version 1.0"
@@ -158,45 +201,7 @@ git ls-remote --tags origin
 # 切换到远程的 v1.0.0 tag
 git checkout -b v1.0.0 tags/v1.0.0
 ```
-## 设置仓库
 
-```bash
-# 无论何时初始化一个新的仓库，默认分支的名称都应该是 master
-git config --global init.defaultBranch master
-
-# 查看配置
-git config --list
-
-# 设置用户名和邮箱
-git config --global user.name <user_name>
-git config --global user.email <user_email>
-
-# 取消配置
-git config --global --unset xx
-
-# 初始化仓库，并设置初始化分支为master
-git init --initial-branch=master。
-
-# 添加远程仓库地址
-git remote add origin <link>
-
-# 显示当前远程仓库链接
-git remote -v
-
-# 更改远程仓库地址，比如更改为 git@xxx
-git remote set-url origin <link>
-```
-## `.gitignore`
-
-```text
-.vscode
-
-# 忽略工作目录下的pkg目录
-/pkg
-
-# 慎用！忽略所有目录下的log目录
-log
-```
 ## 2. Git 进阶
 ### Git restore 回滚文件
 
