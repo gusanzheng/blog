@@ -61,6 +61,7 @@ git remote -v
 git remote set-url origin <link>
 ```
 ### `.gitignore`
+
 配置忽略项目
 
 ```text
@@ -74,7 +75,9 @@ log
 ```
 
 ### git 基础操作
+
 基础操作
+
 ```bash
 # 克隆仓库
 git clone <link>
@@ -105,7 +108,9 @@ git diff origin/dev -- src ":(exclude)src/vendor" ":(exclude)src/codec"
 
 
 ### git branch
+
 分支操作
+
 ```bash
 # 查看本地分支
 git branch
@@ -147,7 +152,9 @@ git branch -m main
 git checkout --orphan new-branch
 ```
 ### git tag
+
 标签操作
+
 ```bash
 # 创建标签并附带注释
 git tag -s v1.0 -m "Release version 1.0"
@@ -163,6 +170,7 @@ git checkout -b v1.0.0 tags/v1.0.0
 ```
 
 ## 2. Git 进阶
+
 ### Git restore 回滚文件
 
 ```bash
@@ -190,6 +198,7 @@ HEAD~3：表示当前分支的倒数第4次提交。
 ### Git stash 
 
 临时保存修改，以便切换分支
+
 ```bash
 用于临时保存当前工作目录的更改，以便你可以切换到其他分支或进行其他操作，而不会丢失未提交的更改
 # 将所有未提交的更改保存到一个栈中，并将工作目录恢复到最近一次提交的状态
@@ -217,6 +226,7 @@ git stash show stash@{0}
 ### Git merge 合并
 
 将变更合并进来，生成新的提交
+
 ```bash
 # 处在 master 分支，把dev分支的内容合并进来
 git merge dev
@@ -231,6 +241,7 @@ git merge --abort
 ### Git rebase 变基 
 
 将变更内容重放
+
 ```bash
 # 交互
 git rebase -i [commitid]
@@ -255,6 +266,7 @@ git rebase master
 ### Git cherry-pick
 
 将某个特定的提交（commit）从一个分支应用到当前分支上
+
 ```bash
 git cherry-pick <commit-hash>
 ```
@@ -262,6 +274,7 @@ git cherry-pick <commit-hash>
 ## 3. Git lfs
 
 大文件操作
+
 ```bash
 apt install git-lfs
 
