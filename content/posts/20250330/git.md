@@ -70,10 +70,12 @@ seo:
 - Git：适合管理文本文件和小型二进制文件，但对于大文件（如图片、视频、数据集等），Git 的效率较低，因为每次更改都会存储整个文件的副本。
 - Git LFS：通过将大文件存储在远程服务器上，并在 Git 仓库中仅保存指向这些文件的指针，从而减少仓库的大小和历史记录的负担。
 
-## Git 基础
+## 1. Git 基础
 
 ### 起步
+
 基础设置
+
 ```bash
 # 无论何时初始化一个新的仓库，默认分支的名称都应该是 master
 git config --global init.defaultBranch master
@@ -145,7 +147,7 @@ git diff origin/dev -- src ":(exclude)src/vendor" ":(exclude)src/codec"
 
 
 ### git branch
-分治操作
+分支操作
 ```bash
 # 查看本地分支
 git branch
