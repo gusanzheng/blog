@@ -40,7 +40,7 @@ nginx -v
 
 默认监听 80 端口，可通过 `vim /etc/nginx/sites-available/default` 进行修改
 
-![nginx](./res/nginx.png)
+![nginx](/blog/images/nginx.png)
 
 ### 2.2 配置
 
