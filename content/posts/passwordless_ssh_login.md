@@ -6,58 +6,9 @@ lastmod: 2025-03-29T12:05:56+08:00
 draft: false
 author: "Steven"
 authorLink: "https://github.com/gusanzheng"
-description: ""
-license: ""
-images: []
 
 tags: ["ssh"]
 categories: ["tutorial"]
-
-featuredImage: ""
-featuredImagePreview: ""
-
-hiddenFromHomePage: false
-hiddenFromSearch: false
-twemoji: false
-lightgallery: true
-ruby: true
-fraction: true
-fontawesome: true
-linkToMarkdown: true
-rssFullText: false
-
-toc:
-  enable: true
-  auto: true
-  keepStatic: false
-code:
-  copy: true
-  maxShownLines: 50
-math:
-  enable: false
-  # ...
-mapbox:
-  # ...
-share:
-  enable: true
-  # ...
-comment:
-  enable: true
-  # ...
-library:
-  css:
-    # someCSS = "some.css"
-    # located in "assets/"
-    # Or
-    # someCSS = "https://cdn.example.com/some.css"
-  js:
-    # someJS = "some.js"
-    # located in "assets/"
-    # Or
-    # someJS = "https://cdn.example.com/some.js"
-seo:
-  images: []
-  # ...
 ---
 
 **摘要**
@@ -77,11 +28,11 @@ ssh-keygen -t rsa -C "your_email_address"
 
 ## 2 免密登录 Git
 
-将 `C:\Users\steven\.ssh\git_id_rsa.pub` 的内容复制到gitee, github的`SSH keys`
+将 `C:\Users\steven\.ssh\gitee_id_rsa.pub` 的内容复制到gitee, github的`SSH keys`
 
 测试连通性
 ```bash
-ssh -T git@github.com
+ssh -T git@gitee.com
 ```
 
 后续使用`git clone git@gitee.com:steven/my-project.git` 即可。
@@ -90,9 +41,16 @@ ssh -T git@github.com
 ```text
 Host gitee.com
   HostName gitee.com
-  IdentityFile C:\Users\steven\.ssh\git_id_rsa
+  IdentityFile C:\Users\steven\.ssh\gitee_id_rsa
   User git
+
+Host github.com
+  HostName github.com
+  IdentityFile C:\Users\steven\.ssh\github_id_rsa
+  User git
+  ProxyCommand nc -X connect -x 127.0.0.1:7890 %h %p
 ```
+> ProxyCommand 配置 ssh 的代理，加速 git clone 拉取 git@github.com 仓库的速度
 
 如果远程仓库一开始用的是HTTPS，可以改为ssh
 ```bash
