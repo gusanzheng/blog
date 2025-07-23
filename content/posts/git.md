@@ -291,7 +291,7 @@ git submodule update --init --recursive
 git clone --recursive <仓库URL>
 ```
 
-## 4.3 查看子模块状态
+### 4.3 查看子模块状态
 
 ```bash
 # 查看子模块状态
