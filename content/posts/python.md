@@ -73,9 +73,14 @@ seo:
 - [uv - 官方文档](https://docs.astral.sh/uv/reference/cli/)
 
 ```bash
-uv venv -p 3.12
+uv venv -p 3.12 # 创建虚拟环境
 source .venv/bin/activate # 进入虚拟环境
+uv sync # 同步环境
 deactivate # 退出虚拟环境
+
+uv add requests  
+uv tree
+uv remove requests
 ```
 
 ## `pip`设置国内镜像源

@@ -30,14 +30,9 @@ toc:
 
 ## 1. Git 基础
 
-### 起步
-
-基础设置
+### 1.1 基础设置
 
 ```bash
-# 无论何时初始化一个新的仓库，默认分支的名称都应该是 master
-git config --global init.defaultBranch master
-
 # 查看配置
 git config --list
 
@@ -60,23 +55,8 @@ git remote -v
 # 更改远程仓库地址，比如更改为 git@xxx
 git remote set-url origin <link>
 ```
-### `.gitignore`
 
-配置忽略项目
-
-```text
-.vscode
-
-# 忽略工作目录下的pkg目录
-/pkg
-
-# 慎用！忽略所有目录下的log目录
-log
-```
-
-### git 基础操作
-
-基础操作
+### 1.2 基础操作
 
 ```bash
 # 克隆仓库
@@ -107,9 +87,7 @@ git diff origin/dev -- src ":(exclude)src/vendor" ":(exclude)src/codec"
 ```
 
 
-### git branch
-
-分支操作
+### 1.3 git branch 分支操作
 
 ```bash
 # 查看本地分支
@@ -151,9 +129,7 @@ git branch -m main
 # 另一个是使新分支没有父结点，即没有历史记录，是一个完全独立背景干净的分支
 git checkout --orphan new-branch
 ```
-### git tag
-
-标签操作
+### 1.4 git tag 标签操作
 
 ```bash
 # 创建标签并附带注释
@@ -171,14 +147,14 @@ git checkout -b v1.0.0 tags/v1.0.0
 
 ## 2. Git 进阶
 
-### Git restore 回滚文件
+### 2.1 Git restore 回滚文件
 
 ```bash
 # 撤销对工作目录中的修改，不影响暂存区
 git restore test.txt
 ```
 
-### Git reset 回滚操作
+### 2.2 Git reset 回滚操作
 
 ```bash
 # 保留工作区和缓存区，仅撤销 git commit， 文件的状态从“已提交”变为“已暂存”
@@ -195,9 +171,7 @@ HEAD~1：表示当前分支的倒数第2次提交。
 HEAD~2：表示当前分支的倒数第3次提交。
 HEAD~3：表示当前分支的倒数第4次提交。
 ```
-### Git stash 
-
-临时保存修改，以便切换分支
+### 2.3 Git stash 临时保存修改，以便切换分支
 
 ```bash
 用于临时保存当前工作目录的更改，以便你可以切换到其他分支或进行其他操作，而不会丢失未提交的更改
@@ -223,9 +197,7 @@ git stash clear # 清空
 # 查看 stash 详细信息
 git stash show stash@{0}
 ```
-### Git merge 合并
-
-将变更合并进来，生成新的提交
+### 2.4 Git merge 将变更合并进来，生成新的提交
 
 ```bash
 # 处在 master 分支，把dev分支的内容合并进来
@@ -238,9 +210,7 @@ git commit -am "merged dev"
 # 取消合并
 git merge --abort
 ```
-### Git rebase 变基 
-
-将变更内容重放
+### 2.5 Git rebase 变基, 将变更内容重放
 
 ```bash
 # 交互
@@ -263,17 +233,13 @@ git pull --rebase origin master
 git fetch origin master
 git rebase master
 ```
-### Git cherry-pick
-
-将某个特定的提交（commit）从一个分支应用到当前分支上
+### 2.6 Git cherry-pick 将某个特定的提交（commit）从一个分支应用到当前分支上
 
 ```bash
 git cherry-pick <commit-hash>
 ```
 
-## 3. Git lfs
-
-大文件操作
+## 3. Git lfs 大文件操作
 
 ```bash
 apt install git-lfs
@@ -291,4 +257,98 @@ git lfs ls-files # 查看跟踪了哪些大文件
 git lfs install # 初始化 Git LFS
 git lfs pull # 拉取大文件
 git lfs pull --include="path/to/file" # 拉取指定大文件
+```
+
+## 4. Git submodule 子模块操作
+
+### 4.1 添加子模块
+
+```bash
+# 添加子模块
+git submodule add <仓库URL> <路径>
+git submodule add https://github.com/example/library.git libs/library
+
+# 添加指定分支的子模块
+git submodule add -b <分支名> <仓库URL> <路径>
+```
+
+### 4.2 初始化和更新子模块
+
+```bash
+# 初始化子模块配置
+git submodule init
+
+# 更新子模块代码
+git submodule update
+
+# 初始化并更新（一次性）
+git submodule update --init
+
+# 递归初始化和更新所有嵌套子模块
+git submodule update --init --recursive
+
+# 克隆包含子模块的仓库时使用
+git clone --recursive <仓库URL>
+```
+
+## 4.3 查看子模块状态
+
+```bash
+# 查看子模块状态
+git submodule status
+
+# 查看详细状态信息
+git submodule status --recursive
+
+# 使用 git status 查看
+git status
+```
+
+### 4.4 更新子模块
+
+```bash
+# 更新到子模块的最新提交
+git submodule update --remote
+
+# 更新到特定分支的最新提交
+git submodule update --remote --merge
+
+# 更新特定子模块
+git submodule update --remote <子模块路径>
+```
+
+### 4.5 修改子模块
+
+```bash
+# 进入子模块目录进行修改
+cd <子模块路径>
+# 进行常规git操作
+git add .
+git commit -m "修改内容"
+git push
+
+# 回到主项目，提交子模块更新
+cd ..
+git add <子模块路径>
+git commit -m "更新子模块"
+git push
+```
+
+### 4.6 删除子模块
+
+```bash
+# 1. 从.gitmodules文件中删除相关条目
+git config --file .gitmodules --remove-section submodule.<子模块名>
+
+# 2. 从.git/config中删除相关条目
+git config --remove-section submodule.<子模块名>
+
+# 3. 从索引中删除
+git rm --cached <子模块路径>
+
+# 4. 删除工作目录中的子模块文件（如果需要）
+rm -rf <子模块路径>
+
+# 5. 提交更改
+git commit -m "删除子模块"
 ```
