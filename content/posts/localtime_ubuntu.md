@@ -6,20 +6,8 @@ lastmod: 2025-06-17T20:20:40+08:00
 draft: false
 author: "Steven"
 authorLink: "https://github.com/gusanzheng"
-description: ""
-
-images: []
-resources:
-- name: ""
-  src: ""
-
 tags: ["docker","ubuntu"]
 categories: ["tutorial"]
-
-lightgallery: true
-
-toc:
-  auto: false
 ---
 **摘要**
 构建一个国内时间、国内镜像源的ubutun基础镜像

@@ -6,20 +6,8 @@ lastmod: 2025-06-17T20:04:59+08:00
 draft: false
 author: "Steven"
 authorLink: "https://github.com/gusanzheng"
-description: ""
-
-images: []
-resources:
-- name: ""
-  src: ""
-
 tags: ["nginx"]
 categories: ["tutorial"]
-
-lightgallery: true
-
-toc:
-  auto: false
 ---
 **摘要**
 nginx 快速实践

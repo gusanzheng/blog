@@ -6,16 +6,8 @@ lastmod: 2025-03-30T16:01:52+08:00
 draft: false
 author: "Steven"
 authorLink: "https://github.com/gusanzheng"
-description: ""
-images: []
-
 tags: ["git"]
 categories: ["tutorial"]
-
-lightgallery: true
-
-toc:
-  auto: false
 ---
 **摘要**
 简单使用`git`。
